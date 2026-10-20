@@ -139,3 +139,838 @@
     }
 
     .catbutton:hover {
+      transform: translateY(-4px);
+    }
+
+    .catbutton svg {
+      width: 100px;
+      height: 100px;
+    }
+
+    .tap {
+      font-size: 13px;
+      color: var(--pink-dark);
+      font-weight: 700;
+    }
+
+    .skip {
+      margin-top: 20px;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      text-decoration: underline;
+      font-size: 12px;
+    }
+
+    /* Navigation */
+    .site {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .4s;
+    }
+
+    .site.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(255,250,247,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font: 800 17px Nunito, sans-serif;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--pink-dark);
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .navlinks a:hover {
+      color: var(--pink-dark);
+    }
+
+    .navbuttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .smallbtn {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 12px;
+      padding: 8px 11px;
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 74px 0 54px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 48px;
+      min-height: 500px;
+    }
+
+    .eyebrow {
+      font: 12px "DM Mono", monospace;
+      color: var(--pink-dark);
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .hero h2 {
+      font: 900 clamp(38px, 6vw, 66px)/1.08 Nunito, sans-serif;
+      letter-spacing: -1.5px;
+      margin: 16px 0;
+    }
+
+    .hero h2 span {
+      color: var(--pink-dark);
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 500px;
+      font-size: 16px;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0;
+    }
+
+    .pill {
+      padding: 7px 12px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .primary,
+    .secondary {
+      display: inline-flex;
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 12px 17px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .primary {
+      background: var(--ink);
+      color: white;
+    }
+
+    .secondary {
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    /* Illustration */
+    .desk {
+      min-height: 340px;
+      position: relative;
+      border-radius: 35px;
+      background: linear-gradient(145deg, #f5dbe5, #e9e3fb);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .sun {
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: var(--yellow);
+      right: 30px;
+      top: 22px;
+      opacity: .8;
+    }
+
+    .plant {
+      position: absolute;
+      left: 28px;
+      bottom: 40px;
+      font-size: 50px;
+      transform: rotate(-8deg);
+    }
+
+    .laptop {
+      position: relative;
+      width: 70%;
+      z-index: 1;
+    }
+
+    .screen {
+      aspect-ratio: 1.35;
+      background: #fffaf7;
+      border: 9px solid #6e6576;
+      border-radius: 15px 15px 6px 6px;
+      padding: 17px;
+      box-shadow: 0 15px 25px #8c789044;
+    }
+
+    .screen .bar {
+      height: 7px;
+      width: 60%;
+      background: var(--pink);
+      border-radius: 9px;
+      margin-bottom: 12px;
+    }
+
+    .screen .line {
+      height: 6px;
+      background: #e9e1ee;
+      border-radius: 8px;
+      margin: 9px 0;
+    }
+
+    .screen .line.short {
+      width: 60%;
+    }
+
+    .screen .code {
+      color: #b66c8a;
+      font: 11px "DM Mono", monospace;
+      margin-top: 18px;
+    }
+
+    .base {
+      height: 12px;
+      background: #a9a0b3;
+      border-radius: 2px 2px 12px 12px;
+      margin: 0 -15px;
+    }
+
+    .sticker {
+      position: absolute;
+      z-index: 2;
+      background: white;
+      border-radius: 16px;
+      padding: 12px 15px;
+      box-shadow: var(--shadow);
+      font: 12px "DM Mono", monospace;
+    }
+
+    .sticker.one {
+      right: 15px;
+      bottom: 42px;
+      transform: rotate(5deg);
+    }
+
+    .sticker.two {
+      left: 20px;
+      top: 34px;
+      transform: rotate(-7deg);
+    }
+
+    /* Sections */
+    section.content {
+      padding: 56px 0;
+    }
+
+    .sectionhead {
+      margin-bottom: 25px;
+    }
+
+    .sectionhead .eyebrow {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .sectionhead h2 {
+      font: 900 clamp(28px, 4vw, 40px) Nunito, sans-serif;
+      margin: 0;
+    }
+
+    .sectionhead p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 8px 0;
+    }
+
+    .aboutbox,
+    .project,
+    .skillbox,
+    .contactbox {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 25px;
+      box-shadow: 0 8px 28px rgba(95,65,80,.04);
+    }
+
+    .aboutbox p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .fact {
+      padding: 15px;
+      background: #fff8fb;
+      border-radius: 16px;
+    }
+
+    .fact strong {
+      display: block;
+      font: 800 13px Nunito, sans-serif;
+    }
+
+    .fact span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      min-height: 275px;
+    }
+
+    .projecttop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .projecticon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: #fbe5ec;
+      font-size: 23px;
+    }
+
+    .project:nth-child(2) .projecticon {
+      background: #e7e1fb;
+    }
+
+    .project:nth-child(3) .projecticon {
+      background: #dff1e6;
+    }
+
+    .project h3 {
+      font: 800 20px Nunito, sans-serif;
+      margin: 18px 0 6px;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 16px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-top: auto;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      background: #f8f4f6;
+      border-radius: 8px;
+      padding: 5px 8px;
+      font: 10px "DM Mono", monospace;
+      color: #766c79;
+    }
+
+    .project a {
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--pink-dark);
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    /* Skills and contact */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .skillbox h3 {
+      font: 800 17px Nunito, sans-serif;
+      margin: 0 0 12px;
+    }
+
+    .skillbox p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .contactbox {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contactbox p {
+      color: var(--muted);
+      margin: 5px 0 0;
+    }
+
+    .contactbox a {
+      word-break: break-word;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px 0 40px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer span {
+      color: var(--pink-dark);
+    }
+
+    /* Dark mode */
+    body.dark {
+      --bg: #24212b;
+      --surface: #302c38;
+      --ink: #f7eef6;
+      --muted: #c4b8c9;
+      --line: #49404f;
+    }
+
+    body.dark .topbar {
+      background: rgba(36,33,43,.92);
+    }
+
+    body.dark .welcome-card {
+      background: rgba(48,44,56,.94);
+      border-color: #49404f;
+    }
+
+    body.dark .pill,
+    body.dark .smallbtn,
+    body.dark .secondary {
+      background: #302c38;
+      color: var(--ink);
+    }
+
+    body.dark .fact,
+    body.dark .tag {
+      background: #3b3443;
+      color: #eee0ed;
+    }
+
+    body.dark .navlinks {
+      background-color: var(--bg);
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 28px, 600px);
+      }
+
+      .nav {
+        min-height: 64px;
+      }
+
+      .navlinks {
+        display: none;
+        position: absolute;
+        top: 63px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        padding: 18px 22px;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navlinks.open {
+        display: flex;
+      }
+
+      .menu {
+        display: inline-block;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 48px;
+        gap: 30px;
+      }
+
+      .desk {
+        min-height: 290px;
+      }
+
+      .projects,
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 46px;
+      }
+
+      .contactbox {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .welcome-card {
+        padding: 22px 18px 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="welcome" id="welcome">
+    <div class="welcome-card">
+      <div class="windowbar">
+        <span><span class="dots">● ● ●</span> &nbsp; berivan's little corner.exe</span>
+        <span>♡</span>
+      </div>
+
+      <p class="tiny">A PERSONAL WEBSITE, MADE WITH CURIOSITY</p>
+      <h1>Merhaba,<br>küçük dünyama <em>hoş geldin!</em></h1>
+      <p>Ben Berivan. Burada kodlar, fikirler ve biraz da tatlılık var.</p>
+
+      <button class="catbutton" id="catEntry" aria-label="Siteye gir">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Çizim kedi">
+          <path d="M24 47 19 17 45 32 Q60 24 75 32 L101 17 96 49 Q106 63 99 82 Q89 105 60 105 Q31 105 21 82 Q14 63 24 47Z" fill="#fffaf7" stroke="#725b7c" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M28 39 26 25 40 35 M80 35 94 25 91 41" fill="#f4b8c8" stroke="#725b7c" stroke-width="3" stroke-linejoin="round"/>
+          <ellipse cx="43" cy="61" rx="4" ry="6" fill="#34313c"/>
+          <ellipse cx="77" cy="61" rx="4" ry="6" fill="#34313c"/>
+          <path d="M55 73 Q60 78 65 73 M60 76 V81 Q54 88 49 82 M60 81 Q66 88 71 82" fill="none" stroke="#725b7c" stroke-width="3" stroke-linecap="round"/>
+          <path d="M17 71 39 74 M17 81 39 80 M103 71 81 74 M103 81 81 80" stroke="#725b7c" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="37" cy="74" r="7" fill="#f4b8c8" opacity=".7"/>
+          <circle cx="83" cy="74" r="7" fill="#f4b8c8" opacity=".7"/>
+        </svg>
+      </button>
+
+      <div class="tap">Kediye tıkla ✦</div>
+      <button class="skip" id="skipEntry">Kediyi sevdim, yine de içeri gir →</button>
+    </div>
+  </section>
+
+  <div class="site" id="site">
+    <div class="topbar">
+      <div class="wrap nav">
+        <a class="brand" href="#home">berivan<span>'s</span> garden ✿</a>
+
+        <nav class="navlinks" id="navlinks">
+          <a href="#about" data-tr="Hakkımda" data-en="About">Hakkımda</a>
+          <a href="#projects" data-tr="Projeler" data-en="Projects">Projeler</a>
+          <a href="#skills" data-tr="Araç kutum" data-en="Skills">Araç kutum</a>
+          <a href="#contact" data-tr="İletişim" data-en="Contact">İletişim</a>
+        </nav>
+
+        <div class="navbuttons">
+          <button class="smallbtn" id="langBtn">EN</button>
+          <button class="smallbtn" id="themeBtn" aria-label="Temayı değiştir">☾</button>
+          <button class="smallbtn menu" id="menuBtn" aria-label="Menüyü aç">☰</button>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section class="wrap hero" id="home">
+        <div>
+          <div class="eyebrow" data-tr="Öğreniyor, üretiyor ve gelişiyorum" data-en="Learning, building and growing">Öğreniyor, üretiyor ve gelişiyorum</div>
+
+          <h2 data-tr="Merhaba, ben <span>Berivan.</span>" data-en="Hi, I'm <span>Berivan.</span>">Merhaba, ben <span>Berivan.</span></h2>
+
+          <p class="intro" data-tr="Yazılım mühendisliği öğrencisiyim. Yapay zekâ, backend ve bilgisayarlı görü kesişiminde yeni şeyler öğreniyor; öğrendiklerimi gerçek projelere dönüştürmeye çalışıyorum." data-en="I'm a Software Engineering student exploring AI, backend development and computer vision, turning what I learn into practical projects.">
+            Yazılım mühendisliği öğrencisiyim. Yapay zekâ, backend ve bilgisayarlı görü kesişiminde yeni şeyler öğreniyor; öğrendiklerimi gerçek projelere dönüştürmeye çalışıyorum.
+          </p>
+
+          <div class="pills">
+            <span class="pill">Software Engineering</span>
+            <span class="pill">Python</span>
+            <span class="pill">Backend</span>
+            <span class="pill">AI & Computer Vision</span>
+          </div>
+
+          <div class="actions">
+            <a class="primary" href="#projects" data-tr="Projelerimi keşfet ↗" data-en="Explore my projects ↗">Projelerimi keşfet ↗</a>
+            <a class="secondary" href="#contact" data-tr="Benimle tanış ↗" data-en="Get in touch ↗">Benimle tanış ↗</a>
+          </div>
+        </div>
+
+        <div class="desk">
+          <div class="sun"></div>
+          <div class="sticker two">✿ curious mind</div>
+          <div class="plant">🪴</div>
+
+          <div class="laptop">
+            <div class="screen">
+              <div class="bar"></div>
+              <div class="line"></div>
+              <div class="line short"></div>
+              <div class="code">
+                &gt; keep_learning();<br>
+                &gt; build_things();<br>
+                &gt; stay_curious();
+              </div>
+            </div>
+            <div class="base"></div>
+          </div>
+
+          <div class="sticker one">my little world.py ♡</div>
+        </div>
+      </section>
+
+      <section class="content wrap" id="about">
+        <div class="sectionhead">
+          <span class="eyebrow">01 / KISACA BEN</span>
+          <h2 data-tr="Hakkımda" data-en="A little about me">Hakkımda</h2>
+        </div>
+
+        <div class="aboutbox">
+          <p data-tr="Bandırma Onyedi Eylül Üniversitesi Yazılım Mühendisliği öğrencisiyim. Merak ederek, deneyerek ve hatalarımdan öğrenerek gelişmeyi seviyorum. Takım çalışmalarında sorumluluk almayı ve öğrendiklerimi çalışan ürünlere dönüştürmeyi önemsiyorum." data-en="I'm a Software Engineering student at Bandırma Onyedi Eylül University. I enjoy learning by exploring, experimenting and improving through mistakes. I value teamwork and turning ideas into working products.">
+            Bandırma Onyedi Eylül Üniversitesi Yazılım Mühendisliği öğrencisiyim. Merak ederek, deneyerek ve hatalarımdan öğrenerek gelişmeyi seviyorum. Takım çalışmalarında sorumluluk almayı ve öğrendiklerimi çalışan ürünlere dönüştürmeyi önemsiyorum.
+          </p>
+
+          <div class="facts">
+            <div class="fact">
+              <strong>🎓 Eğitim</strong>
+              <span>Yazılım Mühendisliği · 4. sınıf</span>
+            </div>
+            <div class="fact">
+              <strong>🧩 İlgi alanları</strong>
+              <span>Yapay zekâ · Backend · Bilgisayarlı görü</span>
+            </div>
+            <div class="fact">
+              <strong>🌱 Şu an</strong>
+              <span>Yeni projeler geliştiriyorum</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content wrap" id="projects">
+        <div class="sectionhead">
+          <span class="eyebrow">02 / SEÇİLİ ÇALIŞMALAR</span>
+          <h2 data-tr="Projelerim" data-en="Selected projects">Projelerim</h2>
+          <p data-tr="Her proje, yeni bir şey öğrendiğim küçük bir adım." data-en="Every project is a small step and a new thing learned.">Her proje, yeni bir şey öğrendiğim küçük bir adım.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project">
+            <div class="projecttop">
+              <div class="projecticon">🚦</div>
+              <span class="tag">TEAM PROJECT</span>
+            </div>
+            <h3>TEKNOFEST 5G & AI — Akıllı Yol Güvenliği</h3>
+            <p>5G ve yapay zekâ destekli yol güvenliği projesinde YOLOv8 model eğitimi ve karşılaştırmaları, veri artırma ve sonuç değerlendirme süreçlerinde takım üyesi olarak katkı sağladım.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">YOLOv8</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Flutter</span>
+            </div>
+            <a href="https://github.com/berivanelci-lgtm/teknofest5g-2026-5Genc" target="_blank" rel="noopener">Projeyi incele ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="projecttop">
+              <div class="projecticon">🧠</div>
+              <span class="tag">C# · WINDOWS FORMS</span>
+            </div>
+            <h3>C# Quiz Uygulaması</h3>
+            <p>20 çoktan seçmeli soruyla çalışan; ilerlemeyi, doğru ve yanlış cevapları gösteren, anında geri bildirim veren ve sonunda puanı hesaplayan masaüstü bilgi yarışması uygulaması.</p>
+            <div class="tags">
+              <span class="tag">C#</span>
+              <span class="tag">Windows Forms</span>
+              <span class="tag">Desktop App</span>
+            </div>
+            <a href="https://github.com/berivanelci-lgtm/csharp-quiz-uygulamasi" target="_blank" rel="noopener">Projeyi incele ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="projecttop">
+              <div class="projecticon">⚙️</div>
+              <span class="tag">BACKEND</span>
+            </div>
+            <h3>Go Task API</h3>
+            <p>Go ile backend ve REST API geliştirme pratiği için hazırladığım görev yönetimi projesi.</p>
+            <div class="tags">
+              <span class="tag">Go</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Backend</span>
+            </div>
+            <a href="https://github.com/berivanelci-lgtm/go-task-api" target="_blank" rel="noopener">Projeyi incele ↗</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="content wrap" id="skills">
+        <div class="sectionhead">
+          <span class="eyebrow">03 / ARAÇ KUTUM</span>
+          <h2 data-tr="Öğrendiklerim ve kullandıklarım" data-en="Tools and technologies">Öğrendiklerim ve kullandıklarım</h2>
+        </div>
+
+        <div class="skills">
+          <div class="skillbox">
+            <h3>💻 Programlama</h3>
+            <p>Python · C# · Go · HTML · CSS · JavaScript temelleri</p>
+          </div>
+          <div class="skillbox">
+            <h3>🤖 Yapay zekâ</h3>
+            <p>YOLOv8 · Bilgisayarlı görü · Model değerlendirme</p>
+          </div>
+          <div class="skillbox">
+            <h3>🛠️ Araçlar</h3>
+            <p>Git · GitHub · Visual Studio · VS Code · Android Studio</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content wrap" id="contact">
+        <div class="sectionhead">
+          <span class="eyebrow">04 / MERHABA DE</span>
+          <h2 data-tr="İletişim" data-en="Let's connect">İletişim</h2>
+        </div>
+
+        <div class="contactbox">
+          <div>
+            <strong data-tr="Birlikte bir şeyler üretelim." data-en="Let's build something together.">Birlikte bir şeyler üretelim.</strong>
+            <p data-tr="Staj, proje ve iş birliği fırsatları için bana ulaşabilirsin." data-en="Feel free to reach out about internships, projects and collaborations.">Staj, proje ve iş birliği fırsatları için bana ulaşabilirsin.</p>
+          </div>
+
+          <div class="actions">
+            <a class="secondary" href="mailto:berivanelciii@gmail.com">✉ berivanelciii@gmail.com</a>
+            <a class="secondary" href="https://www.linkedin.com/in/berivan-el%C3%A7i/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="secondary" href="https://github.com/berivanelci-lgtm" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Made with <span>♡</span> and a little curiosity · © <span id="year"></span> Berivan Elçi
+    </footer>
+  </div>
+
+  <script>
+    const welcome = document.getElementById("welcome");
+    const site = document.getElementById("site");
+
+    function enterSite() {
+      welcome.classList.add("hide");
+      site.classList.add("show");
+      sessionStorage.setItem("gardenEntered", "yes");
+    }
+
+    document.getElementById("catEntry").addEventListener("click", enterSite);
+    document.getElementById("skipEntry").addEventListener("click", enterSite);
+
+    if (sessionStorage.getItem("gardenEntered") === "yes") {
+      welcome.classList.add("hide");
+      site.classList.add("show");
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    let english = false;
+
+    document.getElementById("langBtn").addEventListener("click", function () {
+      english = !english;
+      document.documentElement.lang = english ? "en" : "tr";
+      this.textContent = english ? "TR" : "EN";
+
+      document.querySelectorAll("[data-tr][data-en]").forEach(function (element) {
+        element.innerHTML = english ? element.dataset.en : element.dataset.tr;
+      });
+    });
+
+    document.getElementById("themeBtn").addEventListener("click", function () {
+      document.body.classList.toggle("dark");
+      this.textContent = document.body.classList.contains("dark") ? "☀" : "☾";
+    });
+
+    document.getElementById("menuBtn").addEventListener("click", function () {
+      document.getElementById("navlinks").classList.toggle("open");
+    });
+
+    document.querySelectorAll("#navlinks a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        document.getElementById("navlinks").classList.remove("open");
+      });
+    });
+  </script>
+</body>
+</html>
